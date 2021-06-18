@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/5e90111a89.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <script src="kwitter_page.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="kwitpage.css">
+</head>
+<body>
+    <div> <button id="logout" class="btn btn-danger" style="position: left;" onclick="logsout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    <button style="float: right;" class="btn btn-success" onclick="back()"><i class="fas fa-arrow-left"></i> Back</button>
+    <h3>Room name: <h3 id="name"></h3></h3>
+    </div><br><br>
+        <center>
+            <h1>Kwitter</h1><br><br><br>
+            
+            <div id="output" class="col-lg-3" style="text-align: left; border-radius: 10px;"></div>
+            <div>
+                <label>Send:</label>
+                <input type="text" id="msg">
+                <button onclick="send()">Send:</button>
+            </div>
+        </center>
+    
+</body>
+
+</html>

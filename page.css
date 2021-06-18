@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(90deg, rgba(214,129,240,1) 10%, rgba(133,184,245,1) 90%);
+}
+h1 {
+    color: navy;
+    text-align: center;
+}
+h3 {
+    padding-left: 400px;
+}
+input {
+    align-content: center;
+}
+#output {
+    border-top: 7px solid rgb(61, 195, 123);
+    background-color: rgb(255, 204, 214);
+}
+.trend {
+    color:rgb(71, 236, 145);
+}
