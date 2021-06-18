@@ -1,21 +1,21 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyDxwOCb75tEYFIaPJv2aohqx9yUsq1fA18",
-  authDomain: "kwitter-b60ff.firebaseapp.com",
-  databaseURL: "https://kwitter-b60ff-default-rtdb.firebaseio.com",
-  projectId: "kwitter-b60ff",
-  storageBucket: "kwitter-b60ff.appspot.com",
-  messagingSenderId: "541328931011",
-  appId: "1:541328931011:web:a5fe2618a0f2b475e5ca76"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAJxIXQVUPp6pu1U5N1fKTuvF1dYx7YvA",
+    authDomain: "kwitter-77100.firebaseapp.com",
+    databaseURL: "https://kwitter-77100-default-rtdb.firebaseio.com",
+    projectId: "kwitter-77100",
+    storageBucket: "kwitter-77100.appspot.com",
+    messagingSenderId: "154542587022",
+    appId: "1:154542587022:web:3f37988f7d28eb79fbdddf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+console.log(firebaseConfig)
 
   function getData() {roomname = []; firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
     Room_names = childKey;
     roomname.push(Room_names);
-    console.log(Room_names)
     rows = "<div class='room_name' id="+Room_names+" onclick='redirectroom(this.id)' > #" + Room_names + "</div><hr>"
     document.getElementById('output').innerHTML += rows
    
@@ -36,26 +36,26 @@ function load() {
 
 i = 0
 function addroom() {
-  for (k = 0; k < roomname.length; k++) {
+  //for (k = 0; k < roomname.length; k++) {
     room_name = document.getElementById('addroom').value;
-    if (roomname.includes(room_name) != true) {
+    if (roomname.includes(room_name) == false) {
       localStorage.setItem('roomname', room_name)
-      leader = localStorage.getItem("username")
-      localStorage.setItem('leader', leader)
+      //leader = localStorage.getItem("username")
+      //localStorage.setItem('leader', leader)
       firebase.database().ref("/").child(room_name).update({
         purpose : "adding room name",
-        leader : leader
+        //leader : leader
       });
       
       window.location = "kwitter_page.html"
-      break
+      //break
     }
     else {
       alert("Room already exists")
-      break
+      //break
     }
     }
-}
+
 function redirectroom(name) {
   console.log(name)
   localStorage.setItem('roomname', name)

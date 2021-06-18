@@ -17,21 +17,20 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
     <script src="kwitter_page.js"></script>
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="kwitpage.css">
 </head>
-<body>
+<body onload="loade()">
     <div> <button id="logout" class="btn btn-danger" style="position: left;" onclick="logsout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
     <button style="float: right;" class="btn btn-success" onclick="back()"><i class="fas fa-arrow-left"></i> Back</button>
-    <h3>Room name: <h3 id="name"></h3></h3>
+    <h3 id="roomnam">Room name: </h3>
     </div><br><br>
         <center>
             <h1>Kwitter</h1><br><br><br>
             
-            <div id="output" class="col-lg-3" style="text-align: left; border-radius: 10px;"></div>
+            <div id="output" class="col-lg-4" style="text-align: left; border-radius: 10px;"></div>
             <div>
                 <label>Send:</label>
                 <input type="text" id="msg">

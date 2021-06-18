@@ -1,22 +1,21 @@
-room_name = localStorage.getItem('roomname')
-document.getElementById("name").innerHTML = room_name
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyDxwOCb75tEYFIaPJv2aohqx9yUsq1fA18",
-    authDomain: "kwitter-b60ff.firebaseapp.com",
-    databaseURL: "https://kwitter-b60ff-default-rtdb.firebaseio.com",
-    projectId: "kwitter-b60ff",
-    storageBucket: "kwitter-b60ff.appspot.com",
-    messagingSenderId: "541328931011",
-    appId: "1:541328931011:web:a5fe2618a0f2b475e5ca76"
+
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyBAJxIXQVUPp6pu1U5N1fKTuvF1dYx7YvA",
+    authDomain: "kwitter-77100.firebaseapp.com",
+    databaseURL: "https://kwitter-77100-default-rtdb.firebaseio.com",
+    projectId: "kwitter-77100",
+    storageBucket: "kwitter-77100.appspot.com",
+    messagingSenderId: "154542587022",
+    appId: "1:154542587022:web:3f37988f7d28eb79fbdddf"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
-
+  room_name = localStorage.getItem('roomname')
+  
 function send() {
     msg = document.getElementById('msg').value
-    room_name = localStorage.getItem('roomname')
+    
     user_name = localStorage.getItem('username')
     firebase.database().ref(room_name).push({
         name:user_name,
@@ -27,15 +26,17 @@ function send() {
     document.getElementById('msg').value = ""
 
 }
-
-function getData() { firebase.database().ref("/"+room_name).on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key; childData = childSnapshot.val(); if(childKey != "purpose" && childKey != "leader") {
+function loade() {
+    document.getElementById("roomnam").innerHTML += room_name
+}
+function getData() { firebase.database().ref("/"+room_name).on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key; childData = childSnapshot.val(); if(childKey != "purpose"/* && childKey != "leader"*/) {
     firebase_message_id = childKey;
     message_data = childData;
 //Start code
-      name = message_data['name'];
+      namee = message_data['name'];
       message = message_data['message'];
     like = message_data['like'];
-    name_with_tag = "<h4> <b>"+ name +"</b><img class='user_tick' ></h4>";
+    name_with_tag = "<h4> <b>"+ namee +"</b><img class='user_tick' ></h4>";
     message_with_tag = "<h4 class='message_h4' style='color: grey'>" + message + "</h4>";
 like_button ="<button class='btn btn-info' id="+firebase_message_id+" value="+like+" onclick='updateLike(this.id)'>";
     span_with_tag = "<span>Like: "+ like +" 👍</span></button><hr>";
@@ -65,6 +66,6 @@ function updateLike(message_id)
 
 }
 function back() {
-    localStorage.removeItem('leader')
+    
     window.open('main_page.html', '_self')
 }
